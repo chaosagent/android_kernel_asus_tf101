@@ -29,6 +29,12 @@
 #define PLAT_PHYS_OFFSET		UL(0x80000000)
 #endif
 
+#define END_MEM		            UL(0xBEA00000)
+
+#if defined(CONFIG_KEXEC_HARDBOOT)
+#define KEXEC_HB_PAGE_ADDR		UL(0xBEA00000)
+#endif
+
 /*
  * Unaligned DMA causes tegra dma to place data on 4-byte boundary after
  * expected address. Call to skb_reserve(skb, NET_IP_ALIGN) was causing skb
